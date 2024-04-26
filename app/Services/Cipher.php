@@ -27,20 +27,20 @@ class Cipher
 
     private function shiftCharacter(string $char, int $offset): string
     {
-        $charCode = ord($char);
+        $code = ord($char);
 
-        if ($charCode >= ord('A') && $charCode <= ord('Z')) {
-            return chr($this->convertUppercase($charCode + $offset));
+        if ($code >= ord('A') && $code <= ord('Z')) {
+            return chr($this->shiftUppercase($code + $offset));
         }
 
-        if ($charCode >= ord('a') && $charCode <= ord('z')) {
-            return chr($this->convertLowercase($charCode + $offset));
+        if ($code >= ord('a') && $code <= ord('z')) {
+            return chr($this->shiftLowercase($code + $offset));
         }
 
-        return chr($charCode);
+        return chr($code);
     }
 
-    private function convertUppercase(int $code): string
+    private function shiftUppercase(int $code): string
     {
         if ($code < ord('A')) {
             return (ord('Z') + 1) - (ord('A') - $code);
@@ -53,7 +53,7 @@ class Cipher
         return $code;
     }
 
-    private function convertLowercase(int $code): string
+    private function shiftLowercase(int $code): string
     {
         if ($code < ord('a')) {
             return (ord('z') + 1) - (ord('a') - $code);
