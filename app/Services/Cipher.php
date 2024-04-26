@@ -40,7 +40,7 @@ class Cipher
         return chr($code);
     }
 
-    private function shiftUppercase(int $code): string
+    private function shiftUppercase(int $code): int
     {
         if ($code < ord('A')) {
             return (ord('Z') + 1) - (ord('A') - $code);
@@ -53,7 +53,7 @@ class Cipher
         return $code;
     }
 
-    private function shiftLowercase(int $code): string
+    private function shiftLowercase(int $code): int
     {
         if ($code < ord('a')) {
             return (ord('z') + 1) - (ord('a') - $code);
