@@ -4,4 +4,4 @@ The Caesar Cipher, used by Julius Caesar around 58 BC, is a substitution cipher 
 
 ## Screenshot
 
-![Screenshot](/screenshot.png?raw=true "Convert Your Text")
+![Screenshot](/screenshot.gif?raw=true "Convert Your Text")
